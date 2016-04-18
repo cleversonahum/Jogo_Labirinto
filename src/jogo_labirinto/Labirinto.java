@@ -17,12 +17,12 @@ public class Labirinto {
     int labirinto[][] = new int[10][10]; //Labirinto
     int pos[] = new int[2]; //Coordenadas do Personagem
     int pos_saida[] = new int[2]; //Coordenadas da Saida
-    
+    boolean levelup = false; //Jogador chegou ao final do labirinto? (true - sim e false - n�o)
     void inicializar_labirinto(int labirinto[][]) {
         this.labirinto = labirinto;
     }
     
-    void mostra_labirinto() {
+    void mostra_labirinto() { //Funç�o que mostra o labirinto no console, para melhor controle
         System.out.println("--------------------------------------------------------");
         for (int i = 0; i<this.labirinto.length;i++) {
             for (int j = 0; j<this.labirinto.length;j++) {
@@ -32,6 +32,7 @@ public class Labirinto {
         }
         System.out.println("--------------------------------------------------------");
     }
+    
     
     void pos() { //Função que encontra a posição inicial do jogador e a saida do labirinto
         for (int i = 0; i<this.labirinto.length;i++) {
@@ -114,8 +115,10 @@ public class Labirinto {
                     System.out.println("O array foi excedido");
         } //Fim tratamento de Exceção
         
-        if(pos[0]==pos_saida[0] && pos[1]==pos_saida[1]) //Personagem chegou a saida do labirinto
+        if(pos[0]==pos_saida[0] && pos[1]==pos_saida[1])  {//Personagem chegou a saida do labirinto
             System.out.println("Você Venceu!");
+            this.levelup = true;
+        }
     }
     
     
