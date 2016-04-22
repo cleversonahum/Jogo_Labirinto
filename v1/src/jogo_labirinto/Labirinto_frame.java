@@ -10,15 +10,10 @@ package jogo_labirinto;
  * @author cleversonahum
  */
 public class Labirinto_frame extends javax.swing.JFrame {
-    
-    /**
-     * Creates new form Labirinto_frame
-     */
-    public Labirinto_frame() {
-        initComponents();
-        int teste_labirinto[][] =  
+    //Inicializando Labirinto
+    int teste_labirinto[][] =  
         {
-            { 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
+            { 0, 0, 0, 0, 1, 3, 1, 0, 0, 0},
             { 0, 0, 1, 1, 1, 0, 1, 1, 1, 0},
             { 0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
             { 0, 0, 0, 1, 1, 1, 1, 1, 0, 1},
@@ -26,14 +21,10 @@ public class Labirinto_frame extends javax.swing.JFrame {
             { 0, 0, 0, 1, 1, 0, 0, 1, 0, 1},
             { 0, 1, 1, 1, 1, 0, 0, 1, 1, 1},
             { 0, 1, 1, 0, 0, 0, 0, 0, 0, 0},
-            { 0, 0, 1, 3, 1, 1, 0, 0, 0, 0},
+            { 0, 0, 1, 1, 1, 1, 0, 0, 0, 0},
             { 0, 0, 0, 0, 0, 2, 0, 0, 0, 0}
         };
-        Labirinto labirinto1 = new Labirinto();
-        labirinto1.inicializar_labirinto(teste_labirinto);
-        labirinto1.pos();
-        labirinto1.mostra_labirinto();
-        
+    void demarcarLabirinto (){
         //Inicializando Labirinto com as respectivas posiçoes
             //Linha A
             labirinto1.defineCelula(a1, 0, 0);
@@ -154,6 +145,20 @@ public class Labirinto_frame extends javax.swing.JFrame {
             labirinto1.defineCelula(j8, 9, 7);
             labirinto1.defineCelula(j9, 9, 8);
             labirinto1.defineCelula(j10, 9, 9);
+    }
+    //Inicializando Instancia do Labirinto
+    Labirinto labirinto1 = new Labirinto();
+    /**
+     * Creates new form Labirinto_frame
+     */
+    public Labirinto_frame() {
+        initComponents();
+        
+        labirinto1.inicializar_labirinto(teste_labirinto);
+        labirinto1.pos();
+        labirinto1.mostra_labirinto();
+        
+        this.demarcarLabirinto();
             
     }
 
@@ -268,6 +273,11 @@ public class Labirinto_frame extends javax.swing.JFrame {
         j10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                formKeyTyped(evt);
+            }
+        });
 
         a1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/jamellyblock.png"))); // NOI18N
         a1.setToolTipText("");
@@ -955,6 +965,31 @@ public class Labirinto_frame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyTyped
+        //Aqui e a parte da movimentaçao
+        
+        char caractere = evt.getKeyChar();
+        System.out.println("Isso aqui o : "+caractere);
+        switch(caractere) {
+            case 'i':
+                labirinto1.mover(1);
+                this.demarcarLabirinto();
+                break;
+            case 'k':
+                labirinto1.mover(2);
+                this.demarcarLabirinto();
+                break;
+            case 'l':
+                labirinto1.mover(3);
+                this.demarcarLabirinto();
+                break;
+            case 'j':
+                labirinto1.mover(4);
+                this.demarcarLabirinto();
+                break;
+        }
+    }//GEN-LAST:event_formKeyTyped
 
     /**
      * @param args the command line arguments
