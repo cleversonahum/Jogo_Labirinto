@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package jogo_labirinto;
-
+import javax.swing.JOptionPane;
 /**
  *
  * @author cleversonahum
@@ -24,7 +24,7 @@ public class Labirinto_frame extends javax.swing.JFrame {
             { 0, 0, 1, 1, 1, 1, 0, 0, 0, 0},
             { 0, 0, 0, 0, 0, 2, 0, 0, 0, 0}
         };
-    void demarcarLabirinto (){
+    void demarcarLabirinto (){ //Funçao que atualiza o labirinto
         //Inicializando Labirinto com as respectivas posiçoes
             //Linha A
             labirinto1.defineCelula(a1, 0, 0);
@@ -970,7 +970,7 @@ public class Labirinto_frame extends javax.swing.JFrame {
         //Aqui e a parte da movimentaçao
         
         char caractere = evt.getKeyChar();
-        System.out.println("Isso aqui o : "+caractere);
+        System.out.println("Usuario Digitando a letra : "+caractere);
         switch(caractere) {
             case 'i':
                 labirinto1.mover(1);
@@ -988,6 +988,11 @@ public class Labirinto_frame extends javax.swing.JFrame {
                 labirinto1.mover(4);
                 this.demarcarLabirinto();
                 break;
+        }
+        
+        if(labirinto1.levelup==true) { //Usuario venceu
+            System.out.println("Reconheceu");
+            JOptionPane.showMessageDialog(null, "Voce conseguiu sair :) ");
         }
     }//GEN-LAST:event_formKeyTyped
 
