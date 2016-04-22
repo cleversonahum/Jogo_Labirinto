@@ -22,6 +22,17 @@ public class Labirinto {
         this.labirinto = labirinto;
     }
     
+    void defineCelula(javax.swing.JLabel label, int x, int y) { //Funçao que define qual o icone de cada celula
+        if(this.labirinto[x][y]==0)
+            label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/jamellyblock.png")));
+        else if(this.labirinto[x][y]==1)
+            label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/jamellyfreeway.png")));
+        else if(this.labirinto[x][y]==2)
+            label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/model.png")));
+        else
+            label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/star.png")));
+    }
+    
     void mostra_labirinto() { //Funç�o que mostra o labirinto no console, para melhor controle
         System.out.println("--------------------------------------------------------");
         for (int i = 0; i<this.labirinto.length;i++) {
