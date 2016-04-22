@@ -14,7 +14,7 @@ public class Labirinto {
     // 3 - Saida do Labirinto
     //----------------------------------------
     
-    int labirinto[][] = new int[10][10]; //Labirinto
+    int labirinto[][] = new int[10][20]; //Labirinto
     int pos[] = new int[2]; //Coordenadas do Personagem
     int pos_saida[] = new int[2]; //Coordenadas da Saida
     boolean levelup = false; //Jogador chegou ao final do labirinto? (true - sim e false - n�o)
@@ -134,7 +134,7 @@ public class Labirinto {
     
     
     public static void main(String[] args) {
-        int teste_labirinto[][] =  
+       /* int teste_labirinto[][] =  
         {
             { 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
             { 0, 0, 1, 1, 1, 0, 1, 1, 1, 0},
@@ -155,6 +155,6 @@ public class Labirinto {
         teste.mover(4);
         teste.mover(4);
         System.out.println(teste.pos[0]+"  "+teste.pos[1]);
-        System.out.println(teste.pos_saida[0] + "   " + teste.pos_saida[1]);
+        System.out.println(teste.pos_saida[0] + "   " + teste.pos_saida[1]); */
     }
 }
