@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package jogo_labirinto;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 /**
  *
@@ -11,6 +12,7 @@ import javax.swing.JOptionPane;
  */
 public class Labirinto_frame extends javax.swing.JFrame {
     //Inicializando Labirinto
+    int contador =0;
     int teste_labirinto[][] =  
         {
             { 0, 0, 0, 0, 1, 3, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
@@ -688,9 +690,11 @@ public class Labirinto_frame extends javax.swing.JFrame {
         o20 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("O LABIRINTO");
+        setResizable(false);
         addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                formKeyTyped(evt);
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
             }
         });
 
@@ -2630,36 +2634,50 @@ public class Labirinto_frame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void formKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyTyped
-        //Aqui e a parte da movimentaçao
-        
-        char caractere = evt.getKeyChar();
-        System.out.println("Usuario Digitando a letra : "+caractere);
-        switch(caractere) {
-            case 'i':
-                labirinto1.mover(1);
-                this.demarcarLabirinto();
-                break;
-            case 'k':
-                labirinto1.mover(2);
-                this.demarcarLabirinto();
-                break;
-            case 'l':
-                labirinto1.mover(3);
-                this.demarcarLabirinto();
-                break;
-            case 'j':
-                labirinto1.mover(4);
-                this.demarcarLabirinto();
-                break;
+    /**/
+       public void ranking1(int C){
+        C=contador;
+        if(C<=30){
+            JOptionPane.showMessageDialog(null, "Perfect !!\nVocê saiu com "+contador+" movimentos");
         }
-        
+        else if(C > 30 && C<=33){
+            JOptionPane.showMessageDialog(null, "Ótimo Desempenho.\nVocê saiu com "+contador+" movimentos");
+        }
+        else if(C>33){
+            JOptionPane.showMessageDialog(null, "Bom desempenho, tente novamente.\nVocê saiu com "+contador+" movimentos");
+            
+        }
+    }
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+        // TODO add your handling code here:
+        //Aqui e a parte da movimentaçao
+        if(evt.getKeyCode() == KeyEvent.VK_DOWN){
+            //usuário pressionou tecla para baixo.
+            labirinto1.mover(2);
+            this.demarcarLabirinto();
+            contador++;
+        }else if(evt.getKeyCode() == KeyEvent.VK_UP){
+            //usuário pressionou tecla para cima
+            labirinto1.mover(1);
+            this.demarcarLabirinto();
+            contador++;
+        }else if(evt.getKeyCode() == KeyEvent.VK_LEFT){
+            //usuário pressionou tecla para a esquerda.
+            labirinto1.mover(4);
+            this.demarcarLabirinto();
+            contador++;
+        }else if(evt.getKeyCode() == KeyEvent.VK_RIGHT){
+            //usuário pressionou tecla para a direita.
+            labirinto1.mover(3);
+            this.demarcarLabirinto();
+            contador++;
+        }
         if(labirinto1.levelup==true) { //Usuario venceu
             System.out.println("Reconheceu");
-            JOptionPane.showMessageDialog(null, "Voce conseguiu sair :) ");
+            ranking1(contador);
+            
         }
-    }//GEN-LAST:event_formKeyTyped
+    }//GEN-LAST:event_formKeyPressed
 
     /**
      * @param args the command line arguments

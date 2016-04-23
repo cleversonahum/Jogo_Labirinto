@@ -5,8 +5,10 @@
  */
 package jogo_labirinto;
 
+import javax.swing.JOptionPane;
 
-public class Labirinto {
+
+public class Labirinto{
     //----------------------------------------
     // 0 - Paredes do Labirinto
     // 1 - Caminho que pode ser percorrido
@@ -18,6 +20,7 @@ public class Labirinto {
     int pos[] = new int[2]; //Coordenadas do Personagem
     int pos_saida[] = new int[2]; //Coordenadas da Saida
     boolean levelup = false; //Jogador chegou ao final do labirinto? (true - sim e false - n�o)
+    
     void inicializar_labirinto(int labirinto[][]) {
         this.labirinto = labirinto;
     }
@@ -75,6 +78,7 @@ public class Labirinto {
                         labirinto[pos[0]][pos[1]] = 1;
                         pos[0] = pos[0]-1;
                         mostra_labirinto();
+                        
                     }
                     else {
                         System.out.println("Você não consegue atravessar paredes(ainda)");
@@ -87,6 +91,7 @@ public class Labirinto {
                         labirinto[pos[0]][pos[1]] = 1;
                         pos[0] = pos[0]+1;
                         mostra_labirinto();
+                        
                     }
                     else {
                         System.out.println("Você não consegue atravessar paredes(ainda)");
@@ -99,6 +104,7 @@ public class Labirinto {
                         labirinto[pos[0]][pos[1]] = 1;
                         pos[1] = pos[1]+1;
                         mostra_labirinto();
+                        
                     }
                     else {
                         System.out.println("Você não consegue atravessar paredes(ainda)");
@@ -111,6 +117,7 @@ public class Labirinto {
                         labirinto[pos[0]][pos[1]] = 1;
                         pos[1] = pos[1]-1;
                         mostra_labirinto();
+                      
                     }
                     else {
                         System.out.println("Você não consegue atravessar paredes(ainda)");
