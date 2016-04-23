@@ -16,7 +16,7 @@ public class Labirinto{
     // 3 - Saida do Labirinto
     //----------------------------------------
     
-    int labirinto[][] = new int[10][20]; //Labirinto
+    int labirinto[][] = new int[20][15]; //Labirinto
     int pos[] = new int[2]; //Coordenadas do Personagem
     int pos_saida[] = new int[2]; //Coordenadas da Saida
     boolean levelup = false; //Jogador chegou ao final do labirinto? (true - sim e false - n�o)
