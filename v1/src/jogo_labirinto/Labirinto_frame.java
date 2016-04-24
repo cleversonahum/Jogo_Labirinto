@@ -11,9 +11,11 @@ import javax.swing.JOptionPane;
  * @author cleversonahum
  */
 public class Labirinto_frame extends javax.swing.JFrame {
+    
     //Inicializando Labirinto
+    int level_atual = 1;
     int contador =0;
-    int teste_labirinto[][] =  
+    int labirinto_1[][] =  
         {
             { 0, 0, 0, 0, 1, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
             { 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -404,7 +406,7 @@ public class Labirinto_frame extends javax.swing.JFrame {
      */
     public Labirinto_frame() {
         initComponents();
-        labirinto1.inicializar_labirinto(teste_labirinto);
+        labirinto1.inicializar_labirinto(labirinto_1);
         labirinto1.pos();        
         this.demarcarLabirinto();
             
@@ -2668,19 +2670,50 @@ public class Labirinto_frame extends javax.swing.JFrame {
     /**/
        public void ranking1(int C){
         C=contador;
-        if(C<=27){
+        //Nivel 1
+        if(this.level_atual==1) {
+            if(C<=27){
             JOptionPane.showMessageDialog(null, "Perfect !!\nVocê saiu com "+contador+" movimentos");
             
-        }
-        else if(C > 27 && C<=29){
+            }
+            else if(C > 27 && C<=29){
             JOptionPane.showMessageDialog(null, "Ótimo Desempenho.\nVocê saiu com "+contador+" movimentos");
             
-        }
-        else if(C>29){
+            }
+            else if(C>29){
             JOptionPane.showMessageDialog(null, "Bom desempenho, tente novamente.\nVocê saiu com "+contador+" movimentos");
+            }
+       }
+        
+       //Nivel 2
+        if(this.level_atual==2) {
+            if(C<=27){
+            JOptionPane.showMessageDialog(null, "Perfect !!\nVocê saiu com "+contador+" movimentos");
             
+            }
+            else if(C > 27 && C<=29){
+            JOptionPane.showMessageDialog(null, "Ótimo Desempenho.\nVocê saiu com "+contador+" movimentos");
             
-        }
+            }
+            else if(C>29){
+            JOptionPane.showMessageDialog(null, "Bom desempenho, tente novamente.\nVocê saiu com "+contador+" movimentos");
+            }
+       }
+        //Nivel 3
+        if(this.level_atual==3) {
+            if(C<=27){
+            JOptionPane.showMessageDialog(null, "Perfect !!\nVocê saiu com "+contador+" movimentos");
+            
+            }
+            else if(C > 27 && C<=29){
+            JOptionPane.showMessageDialog(null, "Ótimo Desempenho.\nVocê saiu com "+contador+" movimentos");
+            
+            }
+            else if(C>29){
+            JOptionPane.showMessageDialog(null, "Bom desempenho, tente novamente.\nVocê saiu com "+contador+" movimentos");
+            }
+            JOptionPane.showMessageDialog(null, "Voce e praticamente o Thomas, voce saiu do labirinto :) Agora va lutar contra a C.R.U.E.L");
+       }
     }
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
         // TODO add your handling code here:
@@ -2706,12 +2739,49 @@ public class Labirinto_frame extends javax.swing.JFrame {
             this.demarcarLabirinto();
             contador++;
         }
-       
-        if(labirinto1.levelup==true) { //Usuario venceu
-            System.out.println("Reconheceu");
+        //Venceu Labirinto 1
+        if(labirinto1.levelup==true && this.level_atual==1) { //Usuario venceu
+            System.out.println("Voce superou o primeiro nivel");
             ranking1(contador);
+            //Limpando variaveis
+            labirinto1.labirinto = null;
+            labirinto1.levelup = false;
+            this.contador = 0;
+            //Inicializando novo labirinto
+            labirinto1.inicializar_labirinto(labirinto_2);
+            labirinto1.pos();
+           
+            //Demarcando Novo labirinto
+            this.demarcarLabirinto();
+            this.level_atual++;
+        }
+        //Venceu labirinto 2
+        if(labirinto1.levelup==true && this.level_atual==2) { //Usuario venceu
+            System.out.println("Voce superou o segundo nivel");
+            ranking1(contador);
+            //Limpando variaveis
+            labirinto1.labirinto = null;
+            labirinto1.levelup = false;
+            this.contador = 0;
+            //Inicializando novo labirinto
+            labirinto1.inicializar_labirinto(labirinto_3);
+            labirinto1.pos();
+           
+            //Demarcando Novo labirinto
+            this.demarcarLabirinto();
+            this.level_atual++;
         }
         
+        //Venceu labirinto 3
+        if(labirinto1.levelup==true && this.level_atual==3) { //Usuario venceu
+            System.out.println("Voce e praticamente o Thomas, voce saiu do labirinto agora va lutar contra a C.R.U.E.L");
+            ranking1(contador);
+            new Tela_Principal().setVisible(true);
+            dispose();
+            
+        }
+        
+        System.out.println("linha : " + labirinto1.pos[0] + "  coluna: " + labirinto1.pos[1]);
     }//GEN-LAST:event_formKeyPressed
 
     /**

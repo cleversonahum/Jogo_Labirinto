@@ -16,7 +16,7 @@ public class Labirinto{
     // 3 - Saida do Labirinto
     //----------------------------------------
     
-    int labirinto[][] = new int[20][15]; //Labirinto
+    int labirinto[][] = new int[15][20]; //Labirinto
     int pos[] = new int[2]; //Coordenadas do Personagem
     int pos_saida[] = new int[2]; //Coordenadas da Saida
     boolean levelup = false; //Jogador chegou ao final do labirinto? (true - sim e false - n�o)
@@ -36,10 +36,10 @@ public class Labirinto{
             label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/star.png")));
     }
     
-    void mostra_labirinto() { //Funç�o que mostra o labirinto no console, para melhor controle
+    void mostra_labirinto() { //Funçao que mostra o labirinto no console, para melhor controle
         System.out.println("--------------------------------------------------------");
-        for (int i = 0; i<this.labirinto.length;i++) {
-            for (int j = 0; j<this.labirinto.length;j++) {
+        for (int i = 0; i<15;i++) {
+            for (int j = 0; j<20;j++) {
                 System.out.print(this.labirinto[i][j] + " ");
             }
             System.out.println();
@@ -49,8 +49,8 @@ public class Labirinto{
     
     
     void pos() { //Função que encontra a posição inicial do jogador e a saida do labirinto
-        for (int i = 0; i<this.labirinto.length;i++) {
-            for (int j = 0; j<this.labirinto.length;j++) { //Laço que encontra a coordenada do jogador no labirinto
+        for (int i = 0; i<15;i++) {
+            for (int j = 0; j<20;j++) { //Laço que encontra a coordenada do jogador no labirinto
                 if(this.labirinto[i][j] == 2){
                    this.pos[0] = i;
                    this.pos[1] = j;
@@ -58,8 +58,8 @@ public class Labirinto{
             }
         }
         
-        for (int i = 0; i<this.labirinto.length;i++) { //Laço que encontra a coordenada da saida do labirinto
-            for (int j = 0; j<this.labirinto.length;j++) {
+        for (int i = 0; i<15;i++) { //Laço que encontra a coordenada da saida do labirinto
+            for (int j = 0; j<20;j++) {
                 if(this.labirinto[i][j] == 3){
                    this.pos_saida[0] = i;
                    this.pos_saida[1] = j;
@@ -141,27 +141,52 @@ public class Labirinto{
     
     
     public static void main(String[] args) {
-       /* int teste_labirinto[][] =  
+       /*
+       Labirinto teste = new Labirinto();
+       int labirinto_1[][] =  
         {
-            { 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-            { 0, 0, 1, 1, 1, 0, 1, 1, 1, 0},
-            { 0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
-            { 0, 0, 0, 1, 1, 1, 1, 1, 0, 1},
-            { 0, 0, 0, 1, 0, 0, 0, 1, 0, 1},
-            { 0, 0, 0, 1, 1, 0, 0, 1, 0, 1},
-            { 0, 1, 1, 1, 1, 0, 0, 1, 1, 1},
-            { 0, 1, 1, 0, 0, 0, 0, 0, 0, 0},
-            { 0, 0, 1, 3, 1, 1, 0, 0, 0, 0},
-            { 0, 0, 0, 0, 0, 2, 0, 0, 0, 0}
+            { 0, 0, 0, 0, 1, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            { 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1},
+            { 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1},
+            { 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0},
+            { 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0},
+            { 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0},
+            { 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+            { 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0},
+            { 0, 0, 0, 0, 0, 2, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0},
+            { 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0},
+            { 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         };
-        Labirinto teste = new Labirinto();
-        teste.inicializar_labirinto(teste_labirinto);
-        teste.pos();
-        teste.mostra_labirinto();
-        teste.mover(1);
-        teste.mover(4);
-        teste.mover(4);
-        System.out.println(teste.pos[0]+"  "+teste.pos[1]);
-        System.out.println(teste.pos_saida[0] + "   " + teste.pos_saida[1]); */
+    int labirinto_2[][]={
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 3, 1, 1, 0, 0, 1, 1, 0, 0},
+            { 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0},
+            { 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0},
+            { 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0},
+            { 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0},
+            { 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0},
+            { 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0},
+            { 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1},         
+            { 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1},
+            { 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 2},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+    };
+    teste.inicializar_labirinto(labirinto_1);
+    teste.mostra_labirinto();
+    teste.pos();
+    System.out.println("posiçao inicial: "+teste.pos[0]+" , "+teste.pos[1]);
+    System.out.println("posiçao saida: "+teste.pos_saida[0]+" , "+teste.pos_saida[1]);
+    teste.inicializar_labirinto(labirinto_2);
+    teste.mostra_labirinto();
+    teste.pos();
+    System.out.println("posiçao inicial: "+teste.pos[0]+" , "+teste.pos[1]);
+    System.out.println("posiçao saida: "+teste.pos_saida[0]+" , "+teste.pos_saida[1]);*/
     }
 }
