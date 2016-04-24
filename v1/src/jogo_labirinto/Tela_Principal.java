@@ -1,7 +1,9 @@
 package jogo_labirinto;
 
 
+import java.io.File;
 import jogo_labirinto.Labirinto_frame;
+import jogo_labirinto.Toca_Musica.MP3Musica;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -19,8 +21,10 @@ public class Tela_Principal extends javax.swing.JFrame {
      * Creates new form Tela_Principal
      */
     Labirinto_frame labirinto_interface = new Labirinto_frame();
+    MP3Musica tocar = new MP3Musica();
     public Tela_Principal() {
         initComponents();
+        
     }
 
     /**
@@ -64,7 +68,7 @@ public class Tela_Principal extends javax.swing.JFrame {
         labirinto_interface.setVisible(true);//chama a tela onde está o jogo.
         dispose();//fecha a tela inicial;.
     }//GEN-LAST:event_jButton1ActionPerformed
-
+ 
     /**
      * @param args the command line arguments
      */
@@ -96,6 +100,17 @@ public class Tela_Principal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Tela_Principal().setVisible(true);
+                        // STRING COM O CAMINHO DO ARQUIVO MP3 A SER TOCADO
+        String path = "C:\\Users\\anton\\Downloads\\Music\\Sonic The Hedgehog Labyrinth Zone (Music Video) __ Epic Game Music.mp3";
+
+        // INSTANCIAÇÃO DO OBJETO FILE COM O ARQUIVO MP3
+        File mp3File = new File(path);
+
+        // INSTANCIAÇÃO DO OBJETO MP3MUSICA DA CLASS INTERNA
+        MP3Musica musica = new MP3Musica();
+        musica.tocar(mp3File);
+        // CHAMA O METODO QUE TOCA A MUSICA
+        musica.start();
             }
         });
     }

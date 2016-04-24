@@ -67,6 +67,23 @@ public class Labirinto_frame extends javax.swing.JFrame {
             { 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0},
             { 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
     };
+    int Fim[][] = {
+            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+            { 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1},
+            { 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1},
+            { 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1},
+            { 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1},
+            { 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1},
+            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+            { 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1},
+            { 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1},
+            { 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1},
+            { 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1},
+            { 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1},
+            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+    };
     void demarcarLabirinto (){ //Funçao que atualiza o labirinto
         //Inicializando Labirinto com as respectivas posiçoes
             //Linha A
@@ -398,339 +415,6 @@ public class Labirinto_frame extends javax.swing.JFrame {
             labirinto1.defineCelula(o18, 14, 17);
             labirinto1.defineCelula(o19, 14, 18);
             labirinto1.defineCelula(o20, 14, 19);
-    }
-    
-    void demarcarLabirinto (int mov) { //Funç�o que demarca o labirinto e troca a imagem de personagem de acordo com o movimento
-        //Inicializando Labirinto com as respectivas posiçoes
-            //Linha A
-            labirinto1.defineCelula(a1, 0, 0, mov);
-            labirinto1.defineCelula(a2, 0, 1, mov);
-            labirinto1.defineCelula(a3, 0, 2, mov);
-            labirinto1.defineCelula(a4, 0, 3, mov);
-            labirinto1.defineCelula(a5, 0, 4, mov);
-            labirinto1.defineCelula(a6, 0, 5, mov);
-            labirinto1.defineCelula(a7, 0, 6, mov);
-            labirinto1.defineCelula(a8, 0, 7, mov);
-            labirinto1.defineCelula(a9, 0, 8, mov);
-            labirinto1.defineCelula(a10, 0, 9, mov);
-            labirinto1.defineCelula(a11, 0, 10, mov);
-            labirinto1.defineCelula(a12, 0, 11, mov);
-            labirinto1.defineCelula(a13, 0, 12, mov);
-            labirinto1.defineCelula(a14, 0, 13, mov);
-            labirinto1.defineCelula(a15, 0, 14, mov);
-            labirinto1.defineCelula(a16, 0, 15, mov);
-            labirinto1.defineCelula(a17, 0, 16, mov);
-            labirinto1.defineCelula(a18, 0, 17, mov);
-            labirinto1.defineCelula(a19, 0, 18, mov);
-            labirinto1.defineCelula(a20, 0, 19, mov);
-            
-            //Linha B
-            labirinto1.defineCelula(b1, 1, 0, mov);
-            labirinto1.defineCelula(b2, 1, 1, mov);
-            labirinto1.defineCelula(b3, 1, 2, mov);
-            labirinto1.defineCelula(b4, 1, 3, mov);
-            labirinto1.defineCelula(b5, 1, 4, mov);
-            labirinto1.defineCelula(b6, 1, 5, mov);
-            labirinto1.defineCelula(b7, 1, 6, mov);
-            labirinto1.defineCelula(b8, 1, 7, mov);
-            labirinto1.defineCelula(b9, 1, 8, mov);
-            labirinto1.defineCelula(b10, 1, 9, mov);
-            labirinto1.defineCelula(b11, 1, 10, mov);
-            labirinto1.defineCelula(b12, 1, 11, mov);
-            labirinto1.defineCelula(b13, 1, 12, mov);
-            labirinto1.defineCelula(b14, 1, 13, mov);
-            labirinto1.defineCelula(b15, 1, 14, mov);
-            labirinto1.defineCelula(b16, 1, 15, mov);
-            labirinto1.defineCelula(b17, 1, 16, mov);
-            labirinto1.defineCelula(b18, 1, 17, mov);
-            labirinto1.defineCelula(b19, 1, 18, mov);
-            labirinto1.defineCelula(b20, 1, 19, mov);
-            
-            //Linha C
-            labirinto1.defineCelula(c1, 2, 0, mov);
-            labirinto1.defineCelula(c2, 2, 1, mov);
-            labirinto1.defineCelula(c3, 2, 2, mov);
-            labirinto1.defineCelula(c4, 2, 3, mov);
-            labirinto1.defineCelula(c5, 2, 4, mov);
-            labirinto1.defineCelula(c6, 2, 5, mov);
-            labirinto1.defineCelula(c7, 2, 6, mov);
-            labirinto1.defineCelula(c8, 2, 7, mov);
-            labirinto1.defineCelula(c9, 2, 8, mov);
-            labirinto1.defineCelula(c10, 2, 9, mov);
-            labirinto1.defineCelula(c11, 2, 10, mov);
-            labirinto1.defineCelula(c12, 2, 11, mov);
-            labirinto1.defineCelula(c13, 2, 12, mov);
-            labirinto1.defineCelula(c14, 2, 13, mov);
-            labirinto1.defineCelula(c15, 2, 14, mov);
-            labirinto1.defineCelula(c16, 2, 15, mov);
-            labirinto1.defineCelula(c17, 2, 16, mov);
-            labirinto1.defineCelula(c18, 2, 17, mov);
-            labirinto1.defineCelula(c19, 2, 18, mov);
-            labirinto1.defineCelula(c20, 2, 19, mov);
-            
-            //Linha D
-            labirinto1.defineCelula(d1, 3, 0, mov);
-            labirinto1.defineCelula(d2, 3, 1, mov);
-            labirinto1.defineCelula(d3, 3, 2, mov);
-            labirinto1.defineCelula(d4, 3, 3, mov);
-            labirinto1.defineCelula(d5, 3, 4, mov);
-            labirinto1.defineCelula(d6, 3, 5, mov);
-            labirinto1.defineCelula(d7, 3, 6, mov);
-            labirinto1.defineCelula(d8, 3, 7, mov);
-            labirinto1.defineCelula(d9, 3, 8, mov);
-            labirinto1.defineCelula(d10, 3, 9, mov);
-            labirinto1.defineCelula(d11, 3, 10, mov);
-            labirinto1.defineCelula(d12, 3, 11, mov);
-            labirinto1.defineCelula(d13, 3, 12, mov);
-            labirinto1.defineCelula(d14, 3, 13, mov);
-            labirinto1.defineCelula(d15, 3, 14, mov);
-            labirinto1.defineCelula(d16, 3, 15, mov);
-            labirinto1.defineCelula(d17, 3, 16, mov);
-            labirinto1.defineCelula(d18, 3, 17, mov);
-            labirinto1.defineCelula(d19, 3, 18, mov);
-            labirinto1.defineCelula(d20, 3, 19, mov);
-            
-            //Linha E
-            labirinto1.defineCelula(e1, 4, 0, mov);
-            labirinto1.defineCelula(e2, 4, 1, mov);
-            labirinto1.defineCelula(e3, 4, 2, mov);
-            labirinto1.defineCelula(e4, 4, 3, mov);
-            labirinto1.defineCelula(e5, 4, 4, mov);
-            labirinto1.defineCelula(e6, 4, 5, mov);
-            labirinto1.defineCelula(e7, 4, 6, mov);
-            labirinto1.defineCelula(e8, 4, 7, mov);
-            labirinto1.defineCelula(e9, 4, 8, mov);
-            labirinto1.defineCelula(e10, 4, 9, mov);
-            labirinto1.defineCelula(e11, 4, 10, mov);
-            labirinto1.defineCelula(e12, 4, 11, mov);
-            labirinto1.defineCelula(e13, 4, 12, mov);
-            labirinto1.defineCelula(e14, 4, 13, mov);
-            labirinto1.defineCelula(e15, 4, 14, mov);
-            labirinto1.defineCelula(e16, 4, 15, mov);
-            labirinto1.defineCelula(e17, 4, 16, mov);
-            labirinto1.defineCelula(e18, 4, 17, mov);
-            labirinto1.defineCelula(e19, 4, 18, mov);
-            labirinto1.defineCelula(e20, 4, 19, mov);
-            
-            //Linha F
-            labirinto1.defineCelula(f1, 5, 0, mov);
-            labirinto1.defineCelula(f2, 5, 1, mov);
-            labirinto1.defineCelula(f3, 5, 2, mov);
-            labirinto1.defineCelula(f4, 5, 3, mov);
-            labirinto1.defineCelula(f5, 5, 4, mov);
-            labirinto1.defineCelula(f6, 5, 5, mov);
-            labirinto1.defineCelula(f7, 5, 6, mov);
-            labirinto1.defineCelula(f8, 5, 7, mov);
-            labirinto1.defineCelula(f9, 5, 8, mov);
-            labirinto1.defineCelula(f10, 5, 9, mov);
-            labirinto1.defineCelula(f11, 5, 10, mov);
-            labirinto1.defineCelula(f12, 5, 11, mov);
-            labirinto1.defineCelula(f13, 5, 12, mov);
-            labirinto1.defineCelula(f14, 5, 13, mov);
-            labirinto1.defineCelula(f15, 5, 14, mov);
-            labirinto1.defineCelula(f16, 5, 15, mov);
-            labirinto1.defineCelula(f17, 5, 16, mov);
-            labirinto1.defineCelula(f18, 5, 17, mov);
-            labirinto1.defineCelula(f19, 5, 18, mov);
-            labirinto1.defineCelula(f20, 5, 19, mov);
-            
-            //Linha G
-            labirinto1.defineCelula(g1, 6, 0, mov);
-            labirinto1.defineCelula(g2, 6, 1, mov);
-            labirinto1.defineCelula(g3, 6, 2, mov);
-            labirinto1.defineCelula(g4, 6, 3, mov);
-            labirinto1.defineCelula(g5, 6, 4, mov);
-            labirinto1.defineCelula(g6, 6, 5, mov);
-            labirinto1.defineCelula(g7, 6, 6, mov);
-            labirinto1.defineCelula(g8, 6, 7, mov);
-            labirinto1.defineCelula(g9, 6, 8, mov);
-            labirinto1.defineCelula(g10, 6, 9, mov);
-            labirinto1.defineCelula(g11, 6, 10, mov);
-            labirinto1.defineCelula(g12, 6, 11, mov);
-            labirinto1.defineCelula(g13, 6, 12, mov);
-            labirinto1.defineCelula(g14, 6, 13, mov);
-            labirinto1.defineCelula(g15, 6, 14, mov);
-            labirinto1.defineCelula(g16, 6, 15, mov);
-            labirinto1.defineCelula(g17, 6, 16, mov);
-            labirinto1.defineCelula(g18, 6, 17, mov);
-            labirinto1.defineCelula(g19, 6, 18, mov);
-            labirinto1.defineCelula(g20, 6, 19, mov);
-            
-            //Linha H
-            labirinto1.defineCelula(h1, 7, 0, mov);
-            labirinto1.defineCelula(h2, 7, 1, mov);
-            labirinto1.defineCelula(h3, 7, 2, mov);
-            labirinto1.defineCelula(h4, 7, 3, mov);
-            labirinto1.defineCelula(h5, 7, 4, mov);
-            labirinto1.defineCelula(h6, 7, 5, mov);
-            labirinto1.defineCelula(h7, 7, 6, mov);
-            labirinto1.defineCelula(h8, 7, 7, mov);
-            labirinto1.defineCelula(h9, 7, 8, mov);
-            labirinto1.defineCelula(h10, 7, 9, mov);
-            labirinto1.defineCelula(h11, 7, 10, mov);
-            labirinto1.defineCelula(h12, 7, 11, mov);
-            labirinto1.defineCelula(h13, 7, 12, mov);
-            labirinto1.defineCelula(h14, 7, 13, mov);
-            labirinto1.defineCelula(h15, 7, 14, mov);
-            labirinto1.defineCelula(h16, 7, 15, mov);
-            labirinto1.defineCelula(h17, 7, 16, mov);
-            labirinto1.defineCelula(h18, 7, 17, mov);
-            labirinto1.defineCelula(h19, 7, 18, mov);
-            labirinto1.defineCelula(h20, 7, 19, mov);
-            
-            //Linha I
-            labirinto1.defineCelula(i1, 8, 0, mov);
-            labirinto1.defineCelula(i2, 8, 1, mov);
-            labirinto1.defineCelula(i3, 8, 2, mov);
-            labirinto1.defineCelula(i4, 8, 3, mov);
-            labirinto1.defineCelula(i5, 8, 4, mov);
-            labirinto1.defineCelula(i6, 8, 5, mov);
-            labirinto1.defineCelula(i7, 8, 6, mov);
-            labirinto1.defineCelula(i8, 8, 7, mov);
-            labirinto1.defineCelula(i9, 8, 8, mov);
-            labirinto1.defineCelula(i10, 8, 9, mov);
-            labirinto1.defineCelula(i11, 8, 10, mov);
-            labirinto1.defineCelula(i12, 8, 11, mov);
-            labirinto1.defineCelula(i13, 8, 12, mov);
-            labirinto1.defineCelula(i14, 8, 13, mov);
-            labirinto1.defineCelula(i15, 8, 14, mov);
-            labirinto1.defineCelula(i16, 8, 15, mov);
-            labirinto1.defineCelula(i17, 8, 16, mov);
-            labirinto1.defineCelula(i18, 8, 17, mov);
-            labirinto1.defineCelula(i19, 8, 18, mov);
-            labirinto1.defineCelula(i20, 8, 19, mov);
-            
-            //Linha J
-            labirinto1.defineCelula(j1, 9, 0, mov);
-            labirinto1.defineCelula(j2, 9, 1, mov);
-            labirinto1.defineCelula(j3, 9, 2, mov);
-            labirinto1.defineCelula(j4, 9, 3, mov);
-            labirinto1.defineCelula(j5, 9, 4, mov);
-            labirinto1.defineCelula(j6, 9, 5, mov);
-            labirinto1.defineCelula(j7, 9, 6, mov);
-            labirinto1.defineCelula(j8, 9, 7, mov);
-            labirinto1.defineCelula(j9, 9, 8, mov);
-            labirinto1.defineCelula(j10, 9, 9, mov);
-            labirinto1.defineCelula(j11, 9, 10, mov);
-            labirinto1.defineCelula(j12, 9, 11, mov);
-            labirinto1.defineCelula(j13, 9, 12, mov);
-            labirinto1.defineCelula(j14, 9, 13, mov);
-            labirinto1.defineCelula(j15, 9, 14, mov);
-            labirinto1.defineCelula(j16, 9, 15, mov);
-            labirinto1.defineCelula(j17, 9, 16, mov);
-            labirinto1.defineCelula(j18, 9, 17, mov);
-            labirinto1.defineCelula(j19, 9, 18, mov);
-            labirinto1.defineCelula(j20, 9, 19, mov);
-            
-            //Linha k
-            labirinto1.defineCelula(k1, 10, 0, mov);
-            labirinto1.defineCelula(k2, 10, 1, mov);
-            labirinto1.defineCelula(k3, 10, 2, mov);
-            labirinto1.defineCelula(k4, 10, 3, mov);
-            labirinto1.defineCelula(k5, 10, 4, mov);
-            labirinto1.defineCelula(k6, 10, 5, mov);
-            labirinto1.defineCelula(k7, 10, 6, mov);
-            labirinto1.defineCelula(k8, 10, 7, mov);
-            labirinto1.defineCelula(k9, 10, 8, mov);
-            labirinto1.defineCelula(k10, 10, 9, mov);
-            labirinto1.defineCelula(k11, 10, 10, mov);
-            labirinto1.defineCelula(k12, 10, 11, mov);
-            labirinto1.defineCelula(k13, 10, 12, mov);
-            labirinto1.defineCelula(k14, 10, 13, mov);
-            labirinto1.defineCelula(k15, 10, 14, mov);
-            labirinto1.defineCelula(k16, 10, 15, mov);
-            labirinto1.defineCelula(k17, 10, 16, mov);
-            labirinto1.defineCelula(k18, 10, 17, mov);
-            labirinto1.defineCelula(k19, 10, 18, mov);
-            labirinto1.defineCelula(k20, 10, 19, mov);
-            
-            //Linha L
-            labirinto1.defineCelula(l1, 11, 0, mov);
-            labirinto1.defineCelula(l2, 11, 1, mov);
-            labirinto1.defineCelula(l3, 11, 2, mov);
-            labirinto1.defineCelula(l4, 11, 3, mov);
-            labirinto1.defineCelula(l5, 11, 4, mov);
-            labirinto1.defineCelula(l6, 11, 5, mov);
-            labirinto1.defineCelula(l7, 11, 6, mov);
-            labirinto1.defineCelula(l8, 11, 7, mov);
-            labirinto1.defineCelula(l9, 11, 8, mov);
-            labirinto1.defineCelula(l10, 11, 9, mov);
-            labirinto1.defineCelula(l11, 11, 10, mov);
-            labirinto1.defineCelula(l12, 11, 11, mov);
-            labirinto1.defineCelula(l13, 11, 12, mov);
-            labirinto1.defineCelula(l14, 11, 13, mov);
-            labirinto1.defineCelula(l15, 11, 14, mov);
-            labirinto1.defineCelula(l16, 11, 15, mov);
-            labirinto1.defineCelula(l17, 11, 16, mov);
-            labirinto1.defineCelula(l18, 11, 17, mov);
-            labirinto1.defineCelula(l19, 11, 18, mov);
-            labirinto1.defineCelula(l20, 11, 19, mov);
-            
-            //Linha M
-            labirinto1.defineCelula(m1, 12, 0, mov);
-            labirinto1.defineCelula(m2, 12, 1, mov);
-            labirinto1.defineCelula(m3, 12, 2, mov);
-            labirinto1.defineCelula(m4, 12, 3, mov);
-            labirinto1.defineCelula(m5, 12, 4, mov);
-            labirinto1.defineCelula(m6, 12, 5, mov);
-            labirinto1.defineCelula(m7, 12, 6, mov);
-            labirinto1.defineCelula(m8, 12, 7, mov);
-            labirinto1.defineCelula(m9, 12, 8, mov);
-            labirinto1.defineCelula(m10, 12, 9, mov);
-            labirinto1.defineCelula(m11, 12, 10, mov);
-            labirinto1.defineCelula(m12, 12, 11, mov);
-            labirinto1.defineCelula(m13, 12, 12, mov);
-            labirinto1.defineCelula(m14, 12, 13, mov);
-            labirinto1.defineCelula(m15, 12, 14, mov);
-            labirinto1.defineCelula(m16, 12, 15, mov);
-            labirinto1.defineCelula(m17, 12, 16, mov);
-            labirinto1.defineCelula(m18, 12, 17, mov);
-            labirinto1.defineCelula(m19, 12, 18, mov);
-            labirinto1.defineCelula(m20, 12, 19, mov);
-            
-            //Linha N
-            labirinto1.defineCelula(n1, 13, 0, mov);
-            labirinto1.defineCelula(n2, 13, 1, mov);
-            labirinto1.defineCelula(n3, 13, 2, mov);
-            labirinto1.defineCelula(n4, 13, 3, mov);
-            labirinto1.defineCelula(n5, 13, 4, mov);
-            labirinto1.defineCelula(n6, 13, 5, mov);
-            labirinto1.defineCelula(n7, 13, 6, mov);
-            labirinto1.defineCelula(n8, 13, 7, mov);
-            labirinto1.defineCelula(n9, 13, 8, mov);
-            labirinto1.defineCelula(n10, 13, 9, mov);
-            labirinto1.defineCelula(n11, 13, 10, mov);
-            labirinto1.defineCelula(n12, 13, 11, mov);
-            labirinto1.defineCelula(n13, 13, 12, mov);
-            labirinto1.defineCelula(n14, 13, 13, mov);
-            labirinto1.defineCelula(n15, 13, 14, mov);
-            labirinto1.defineCelula(n16, 13, 15, mov);
-            labirinto1.defineCelula(n17, 13, 16, mov);
-            labirinto1.defineCelula(n18, 13, 17, mov);
-            labirinto1.defineCelula(n19, 13, 18, mov);
-            labirinto1.defineCelula(n20, 13, 19, mov);
-            
-            //Linha O
-            labirinto1.defineCelula(o1, 14, 0, mov);
-            labirinto1.defineCelula(o2, 14, 1, mov);
-            labirinto1.defineCelula(o3, 14, 2, mov);
-            labirinto1.defineCelula(o4, 14, 3, mov);
-            labirinto1.defineCelula(o5, 14, 4, mov);
-            labirinto1.defineCelula(o6, 14, 5, mov);
-            labirinto1.defineCelula(o7, 14, 6, mov);
-            labirinto1.defineCelula(o8, 14, 7, mov);
-            labirinto1.defineCelula(o9, 14, 8, mov);
-            labirinto1.defineCelula(o10, 14, 9, mov);
-            labirinto1.defineCelula(o11, 14, 10, mov);
-            labirinto1.defineCelula(o12, 14, 11, mov);
-            labirinto1.defineCelula(o13, 14, 12, mov);
-            labirinto1.defineCelula(o14, 14, 13, mov);
-            labirinto1.defineCelula(o15, 14, 14, mov);
-            labirinto1.defineCelula(o16, 14, 15, mov);
-            labirinto1.defineCelula(o17, 14, 16, mov);
-            labirinto1.defineCelula(o18, 14, 17, mov);
-            labirinto1.defineCelula(o19, 14, 18, mov);
-            labirinto1.defineCelula(o20, 14, 19, mov);
     }
     //Inicializando Instancia do Labirinto
     Labirinto labirinto1 = new Labirinto();
@@ -3054,22 +2738,22 @@ public class Labirinto_frame extends javax.swing.JFrame {
         if(evt.getKeyCode() == KeyEvent.VK_DOWN){
             //usuário pressionou tecla para baixo.
             labirinto1.mover(2);
-            this.demarcarLabirinto(2);
+            this.demarcarLabirinto();
             contador++;
         }else if(evt.getKeyCode() == KeyEvent.VK_UP){
             //usuário pressionou tecla para cima
             labirinto1.mover(1);
-            this.demarcarLabirinto(1);
+            this.demarcarLabirinto();
             contador++;
         }else if(evt.getKeyCode() == KeyEvent.VK_LEFT){
             //usuário pressionou tecla para a esquerda.
             labirinto1.mover(4);
-            this.demarcarLabirinto(4);
+            this.demarcarLabirinto();
             contador++;
         }else if(evt.getKeyCode() == KeyEvent.VK_RIGHT){
             //usuário pressionou tecla para a direita.
             labirinto1.mover(3);
-            this.demarcarLabirinto(3);
+            this.demarcarLabirinto();
             contador++;
         }
         //Venceu Labirinto 1
@@ -3107,12 +2791,32 @@ public class Labirinto_frame extends javax.swing.JFrame {
         
         //Venceu labirinto 3
         if(labirinto1.levelup==true && this.level_atual==3) { //Usuario venceu
-            System.out.println("Voce e praticamente o Thomas, voce saiu do labirinto agora va lutar contra a C.R.U.E.L");
+            System.out.println("Voce e praticamente o Thomas, voce saiu do labirinto agora vá lutar contra a C.R.U.E.L.A");
             ranking1(contador);
-            new Tela_Principal().setVisible(true);
-            dispose();
+            labirinto1.labirinto = null;
+            labirinto1.levelup = false;
+            this.contador = 0;
+            //Inicializando novo labirinto
+            labirinto1.inicializar_labirinto(Fim);
+            labirinto1.pos();
+           
+            //Demarcando Novo labirinto
+            this.demarcarLabirinto();
+            this.level_atual++;
             
+            int Verifica = JOptionPane.showConfirmDialog(null,"Parabens, Você Completou todas as Etapas do Jogo\nClieque em Ok para voltar ao inicio.");
+            if(Verifica == JOptionPane.YES_OPTION){
+                
+                new Tela_Principal().setVisible(true);
+                
+                dispose();
+            }else System.exit(0);
         }
+        //if(labirinto1.fim == true && this.level_atual==4){
+          //  System.out.println("Parabens, Você Completou todas as Etapas do Jogo.");
+            //new Tela_Principal().setVisible(true);
+          //dispose();
+        //}
         
         System.out.println("linha : " + labirinto1.pos[0] + "  coluna: " + labirinto1.pos[1]);
     }//GEN-LAST:event_formKeyPressed
