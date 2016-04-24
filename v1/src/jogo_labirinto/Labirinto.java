@@ -36,6 +36,35 @@ public class Labirinto{
             label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/star.png")));
     }
     
+    void defineCelula(javax.swing.JLabel label, int x, int y, int mov) { //Funçao que define qual o icone de cada celula, alterando a imagem do personagem de acordo com o movimento
+        if(this.labirinto[x][y]==0)
+            label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/jamellyblock.png")));
+        else if(this.labirinto[x][y]==1)
+            label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/jamellyfreeway.png")));
+        else if(this.labirinto[x][y]==2) {
+            switch(mov) {
+                case 1: //UP
+                    label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/model_up.png")));
+                    break;
+                case 2: //Down
+                    label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/model_down.png")));
+                    break;
+                case 3: //Right
+                    label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/model_right.png")));
+                    break;
+                case 4: //left
+                    label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/model_left.png")));
+                    break;
+                default:
+                    label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/model_up.png")));
+                    break;
+            }
+        }
+        else
+            label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/star.png")));
+    }
+    
+    
     void mostra_labirinto() { //Funçao que mostra o labirinto no console, para melhor controle
         System.out.println("--------------------------------------------------------");
         for (int i = 0; i<15;i++) {
