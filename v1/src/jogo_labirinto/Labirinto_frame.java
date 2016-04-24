@@ -67,6 +67,23 @@ public class Labirinto_frame extends javax.swing.JFrame {
             { 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0},
             { 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
     };
+    int Fim[][] = {
+            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+            { 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1},
+            { 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1},
+            { 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1},
+            { 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1},
+            { 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1},
+            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+            { 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1},
+            { 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1},
+            { 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1},
+            { 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1},
+            { 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1},
+            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+    };
     void demarcarLabirinto (){ //Funçao que atualiza o labirinto
         //Inicializando Labirinto com as respectivas posiçoes
             //Linha A
@@ -3014,7 +3031,7 @@ public class Labirinto_frame extends javax.swing.JFrame {
             
             }
             else if(C>29){
-            JOptionPane.showMessageDialog(null, "Bom desempenho, tente novamente.\nVocê saiu com "+contador+" movimentos");
+            JOptionPane.showMessageDialog(null, "Bom desempenho, tente novamente na próxima.\nVocê saiu com "+contador+" movimentos");
             }
        }
         
@@ -3029,21 +3046,21 @@ public class Labirinto_frame extends javax.swing.JFrame {
             
             }
             else if(C>29){
-            JOptionPane.showMessageDialog(null, "Bom desempenho, tente novamente.\nVocê saiu com "+contador+" movimentos");
+            JOptionPane.showMessageDialog(null, "Bom desempenho, tente novamente na próxima.\nVocê saiu com "+contador+" movimentos");
             }
        }
         //Nivel 3
         if(this.level_atual==3) {
-            if(C<=27){
+            if(C<=48){
             JOptionPane.showMessageDialog(null, "Perfect !!\nVocê saiu com "+contador+" movimentos");
             
             }
-            else if(C > 27 && C<=29){
+            else if(C > 48 && C<=50){
             JOptionPane.showMessageDialog(null, "Ótimo Desempenho.\nVocê saiu com "+contador+" movimentos");
             
             }
-            else if(C>29){
-            JOptionPane.showMessageDialog(null, "Bom desempenho, tente novamente.\nVocê saiu com "+contador+" movimentos");
+            else if(C>50){
+            JOptionPane.showMessageDialog(null, "Bom desempenho, tente novamente na próxima.\nVocê saiu com "+contador+" movimentos");
             }
             JOptionPane.showMessageDialog(null, "Voce e praticamente o Thomas, voce saiu do labirinto :) Agora va lutar contra a C.R.U.E.L");
        }
@@ -3107,11 +3124,26 @@ public class Labirinto_frame extends javax.swing.JFrame {
         
         //Venceu labirinto 3
         if(labirinto1.levelup==true && this.level_atual==3) { //Usuario venceu
-            System.out.println("Voce e praticamente o Thomas, voce saiu do labirinto agora va lutar contra a C.R.U.E.L");
+            System.out.println("Voce e praticamente o Thomas, voce saiu do labirinto agora vá lutar contra a C.R.U.E.L.A");
             ranking1(contador);
-            new Tela_Principal().setVisible(true);
-            dispose();
+            labirinto1.labirinto = null;
+            labirinto1.levelup = false;
+            this.contador = 0;
+            //Inicializando novo labirinto
+            labirinto1.inicializar_labirinto(Fim);
+            labirinto1.pos();
+           
+            //Demarcando Novo labirinto
+            this.demarcarLabirinto();
+            this.level_atual++;
             
+            int Verifica = JOptionPane.showConfirmDialog(null,"Parabens, Você Completou todas as Etapas do Jogo\nClieque em Sim para voltar ao inicio.");
+            if(Verifica == JOptionPane.YES_OPTION){
+                
+                new Tela_Principal().setVisible(true);
+                
+                dispose();
+            }else System.exit(0);
         }
         
         System.out.println("linha : " + labirinto1.pos[0] + "  coluna: " + labirinto1.pos[1]);

@@ -1,12 +1,14 @@
 package jogo_labirinto;
 
 
+import java.io.File;
 import jogo_labirinto.Labirinto_frame;
+import jogo_labirinto.Toca_Musica.MP3Musica;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+//Obs: Para a reprodução do Aduio, é necessário repassar a localição da página, em que o mesmo esta inserido
+       O audio se encontra dentro do projeto, ao baixo, é necessário repassar a String path = "" localizado ao
+       método main desta classe. O caminho deve ser localizado desde o diretório Raiz.
  */
 
 /**
@@ -18,6 +20,7 @@ public class Tela_Principal extends javax.swing.JFrame {
     /**
      * Creates new form Tela_Principal
      */
+    MP3Musica toca = new MP3Musica();
     Labirinto_frame labirinto_interface = new Labirinto_frame();
     public Tela_Principal() {
         initComponents();
@@ -96,6 +99,17 @@ public class Tela_Principal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Tela_Principal().setVisible(true);
+        // STRING COM O CAMINHO DO ARQUIVO MP3 A SER TOCADO
+        String path = "C:\\Users\\anton\\Git\\Jogo_Labirinto\\v1\\src\\Audio\\mix_4m36s (audio-joiner.com).mp3";
+
+        // INSTANCIAÇÃO DO OBJETO FILE COM O ARQUIVO MP3
+        File mp3File = new File(path);
+
+        // INSTANCIAÇÃO DO OBJETO MP3MUSICA DA CLASS INTERNA
+        MP3Musica musica = new MP3Musica();
+        musica.tocar(mp3File);
+        // CHAMA O METODO QUE TOCA A MUSICA
+        musica.start();
             }
         });
     }
