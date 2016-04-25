@@ -67,6 +67,40 @@ public class Labirinto_frame extends javax.swing.JFrame {
             { 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0},
             { 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
     };
+    int labirinto_4[][] = {
+            { 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1},
+            { 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0},
+            { 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1},
+            { 0, 3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1},
+            { 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1},
+            { 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1},
+            { 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1},
+            { 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1},
+            { 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1},
+            { 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1},
+            { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0},
+            { 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0},
+            { 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0},
+            { 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
+            { 2, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0},
+};
+    int labirinto_5[][] = {
+            { 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+            { 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0},
+            { 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1},
+            { 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1},
+            { 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0},
+            { 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1},
+            { 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1},
+            { 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1},
+            { 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1},
+            { 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1},
+            { 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0},
+            { 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0},
+            { 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0},
+            { 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
+            { 1, 1, 1, 1, 1, 1, 3, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0},
+    };
     int Fim[][] = {
             { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
             { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
@@ -3062,6 +3096,36 @@ public class Labirinto_frame extends javax.swing.JFrame {
             else if(C>50){
             JOptionPane.showMessageDialog(null, "Bom desempenho, tente novamente na próxima.\nVocê saiu com "+contador+" movimentos");
             }
+            
+       }
+        //Nivel 4
+        if(this.level_atual==4) {
+            if(C<=56){
+            JOptionPane.showMessageDialog(null, "Perfect !!\nVocê saiu com "+contador+" movimentos");
+            
+            }
+            else if(C > 56 && C<=60){
+            JOptionPane.showMessageDialog(null, "Ótimo Desempenho.\nVocê saiu com "+contador+" movimentos");
+            
+            }
+            else if(C>58){
+            JOptionPane.showMessageDialog(null, "Bom desempenho, tente novamente na próxima.\nVocê saiu com "+contador+" movimentos");
+            }
+            
+       }
+        //Nivel 5
+        if(this.level_atual==5) {
+            if(C<=64){
+            JOptionPane.showMessageDialog(null, "Perfect !!\nVocê saiu com "+contador+" movimentos");
+            
+            }
+            else if(C > 64 && C<=69){
+            JOptionPane.showMessageDialog(null, "Ótimo Desempenho.\nVocê saiu com "+contador+" movimentos");
+            
+            }
+            else if(C>69){
+            JOptionPane.showMessageDialog(null, "Bom desempenho, tente novamente na próxima.\nVocê saiu com "+contador+" movimentos");
+            }
             JOptionPane.showMessageDialog(null, "Voce e praticamente o Thomas, voce saiu do labirinto :) Agora va lutar contra a C.R.U.E.L");
        }
     }
@@ -3124,6 +3188,37 @@ public class Labirinto_frame extends javax.swing.JFrame {
         
         //Venceu labirinto 3
         if(labirinto1.levelup==true && this.level_atual==3) { //Usuario venceu
+           System.out.println("Voce superou o segundo nivel");
+            ranking1(contador);
+            //Limpando variaveis
+            labirinto1.labirinto = null;
+            labirinto1.levelup = false;
+            this.contador = 0;
+            //Inicializando novo labirinto
+            labirinto1.inicializar_labirinto(labirinto_4);
+            labirinto1.pos();
+           
+            //Demarcando Novo labirinto
+            this.demarcarLabirinto();
+            this.level_atual++;
+        }
+        //Venceu o labirinto_4
+        if(labirinto1.levelup==true && this.level_atual==4) { //Usuario venceu
+            System.out.println("Voce superou o quarto ");
+            ranking1(contador);
+            labirinto1.labirinto = null;
+            labirinto1.levelup = false;
+            this.contador = 0;
+            //Inicializando novo labirinto
+            labirinto1.inicializar_labirinto(labirinto_5);
+            labirinto1.pos();
+           
+            //Demarcando Novo labirinto
+            this.demarcarLabirinto();
+            this.level_atual++;
+        }
+        //Venceu Labirinto_5
+        if(labirinto1.levelup==true && this.level_atual==5) { //Usuario venceu
             System.out.println("Voce e praticamente o Thomas, voce saiu do labirinto agora vá lutar contra a C.R.U.E.L.A");
             ranking1(contador);
             labirinto1.labirinto = null;
@@ -3145,7 +3240,6 @@ public class Labirinto_frame extends javax.swing.JFrame {
                 dispose();
             }else System.exit(0);
         }
-        
         System.out.println("linha : " + labirinto1.pos[0] + "  coluna: " + labirinto1.pos[1]);
     }//GEN-LAST:event_formKeyPressed
 
